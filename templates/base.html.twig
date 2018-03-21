@@ -2,24 +2,36 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>{% block title %}Vanilla{% endblock %}</title>
     {% block stylesheets %}
-        <!--[if lte IE 8]><script src="{{ asset('assets/js/ie/html5shiv.js') }}"></script><![endif]-->
-        <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
-        <!--[if lte IE 9]><link rel="stylesheet" href="{{ asset('assets/css/ie9.css') }}" /><![endif]-->
-        <!--[if lte IE 8]><link rel="stylesheet" href="{{ asset('assets/css/ie8.css') }}" /><![endif]-->
+        <!-- Google web font "Open Sans" -->
+        <link rel="stylesheet" href="{{ asset('assets/css/open_Sans.css') }}">
+        <!-- Template style -->
+        <link rel="stylesheet" href="{{ asset('assets/css/templatemo-style.css') }}">
+        <!-- Bootstrap style -->
+        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+        <!-- My css -->
+        <link rel="stylesheet" href="{{ asset('assets/css/vanilla.css') }}">
+    {% endblock %}
+
+    {% block navbar %}
+
+
     {% endblock %}
 </head>
 <body>
-{% block body %}{% endblock %}
+{% block body %}
+{% endblock %}
 {% block javascripts %}
-    <script src="{{ asset('assets/js/skel.min.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.scrollex.min.js') }}"></script>
-    <script src="{{ asset('assets/js/util.js') }}"></script>
-    <!--[if lte IE 8]><script src="{{ asset('assets/js/ie/respond.min.js') }}"></script><![endif]-->
-    <script src="{{ asset('assets/js/main.js') }}"></script>
+
+    <!-- jQuery 1.11.3 old version -->
+    <script src="{{ asset('assets/js/jquery-1.11.3.min.js') }}"></script>
+    <!-- Bootstrap (http://v4-alpha.getbootstrap.com/) -->
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    <!-- js compact of template -->
+    <script src="{{ asset('assets/js/tether.min.js') }}"></script>
+
 {% endblock %}
 </body>
 </html>

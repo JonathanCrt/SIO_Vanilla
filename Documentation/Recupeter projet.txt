@@ -1,0 +1,8 @@
+cd d:/laragon/www/Symfony_projects
+
+git clone [adresse]
+
+cd Vanilla
+
+composer update
+

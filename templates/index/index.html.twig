@@ -2,203 +2,326 @@
 
 {% block title %}{{ controller_name }}!{% endblock %}
 
+
+
 {% block body %}
-    <div id="wrapper" class="fade-in">
 
-        <!-- Intro -->
-        <div id="intro">
-            <h1>Bienvenue<br />
-                sur Vanilla</h1>
-            <p>Ce dispositif va vous aider dans votre recherche de stage ! </p>
-            <ul class="actions">
-                <li><a href="#header" class="button icon solo fa-arrow-down scrolly">Continue</a></li>
-            </ul>
-        </div>
+    <div class="tm-header">
+        <div class="container-fluid">
+            <div class="tm-header-inner">
+                <a href="#" class="navbar-brand tm-site-name titleApp">Vanilla</a>
 
-        <!-- Header -->
-        <header id="header">
-            <a href="index.html" class="logo">Massively</a>
-        </header>
+                <!-- navbar -->
+                <nav class="navbar tm-main-nav">
 
-        <!-- Nav -->
-        <nav id="nav">
-            <ul class="links">
-                <li class="#"><a href="index.html">Accueil</a></li>
-                <li><a href="#">Listes des entreprises</a></li>
-                <li><a href="#">J'ai un stage ! </a></li>
-                <li><a href="#">Aide </a></li>
-            </ul>
-            <ul class="icons">
-                <li><span class="label">Bienvenue Jonathan</span></li>
-                <li><a href="#" class="icon fa-sign-out"><span class="label">Deconnexion</span></a></li>
-            </ul>
-        </nav>
+                    <button class="navbar-toggler hidden-md-up" type="button" data-toggle="collapse"
+                            data-target="#tmNavbar">
+                        &#9776;
+                    </button>
 
-        <!-- Main -->
-        <div id="main">
-
-            <!-- Featured Post -->
-            <article class="post featured">
-                <header class="major">
-                    <span class="date">April 25, 2017</span>
-                    <h2><a href="#">And this is a<br />
-                            massive headline</a></h2>
-                    <p>Aenean ornare velit lacus varius enim ullamcorper proin aliquam<br />
-                        facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br />
-                        amet nullam sed etiam veroeros.</p>
-                </header>
-                <a href="#" class="image main"><img src="images/pic01.jpg" alt="" /></a>
-                <ul class="actions">
-                    <li><a href="#" class="button big">Full Story</a></li>
-                </ul>
-            </article>
-
-            <!-- Posts -->
-            <section class="posts">
-                <article>
-                    <header>
-                        <span class="date">April 24, 2017</span>
-                        <h2><a href="#">Sed magna<br />
-                                ipsum faucibus</a></h2>
-                    </header>
-                    <a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
-                    <p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
-                    <ul class="actions">
-                        <li><a href="#" class="button">Full Story</a></li>
-                    </ul>
-                </article>
-                <article>
-                    <header>
-                        <span class="date">April 22, 2017</span>
-                        <h2><a href="#">Primis eget<br />
-                                imperdiet lorem</a></h2>
-                    </header>
-                    <a href="#" class="image fit"><img src="images/pic03.jpg" alt="" /></a>
-                    <p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
-                    <ul class="actions">
-                        <li><a href="#" class="button">Full Story</a></li>
-                    </ul>
-                </article>
-                <article>
-                    <header>
-                        <span class="date">April 18, 2017</span>
-                        <h2><a href="#">Ante mattis<br />
-                                interdum dolor</a></h2>
-                    </header>
-                    <a href="#" class="image fit"><img src="images/pic04.jpg" alt="" /></a>
-                    <p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
-                    <ul class="actions">
-                        <li><a href="#" class="button">Full Story</a></li>
-                    </ul>
-                </article>
-                <article>
-                    <header>
-                        <span class="date">April 14, 2017</span>
-                        <h2><a href="#">Tempus sed<br />
-                                nulla imperdiet</a></h2>
-                    </header>
-                    <a href="#" class="image fit"><img src="images/pic05.jpg" alt="" /></a>
-                    <p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
-                    <ul class="actions">
-                        <li><a href="#" class="button">Full Story</a></li>
-                    </ul>
-                </article>
-                <article>
-                    <header>
-                        <span class="date">April 11, 2017</span>
-                        <h2><a href="#">Odio magna<br />
-                                sed consectetur</a></h2>
-                    </header>
-                    <a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a>
-                    <p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
-                    <ul class="actions">
-                        <li><a href="#" class="button">Full Story</a></li>
-                    </ul>
-                </article>
-                <article>
-                    <header>
-                        <span class="date">April 7, 2017</span>
-                        <h2><a href="#">Augue lorem<br />
-                                primis vestibulum</a></h2>
-                    </header>
-                    <a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
-                    <p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
-                    <ul class="actions">
-                        <li><a href="#" class="button">Full Story</a></li>
-                    </ul>
-                </article>
-            </section>
-
-            <!-- Footer -->
-            <footer>
-                <div class="pagination">
-                    <!--<a href="#" class="previous">Prev</a>-->
-                    <a href="#" class="page active">1</a>
-                    <a href="#" class="page">2</a>
-                    <a href="#" class="page">3</a>
-                    <span class="extra">&hellip;</span>
-                    <a href="#" class="page">8</a>
-                    <a href="#" class="page">9</a>
-                    <a href="#" class="page">10</a>
-                    <a href="#" class="next">Next</a>
-                </div>
-            </footer>
-
-        </div>
-
-        <!-- Footer -->
-        <footer id="footer">
-            <section>
-                <form method="post" action="#">
-                    <div class="field">
-                        <label for="name">Name</label>
-                        <input type="text" name="name" id="name" />
+                    <div class="collapse navbar-toggleable-sm" id="tmNavbar">
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item active">
+                                <a href="#" class="nav-link">Accueil</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Liste des entreprises</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">J'ai un stage!</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="contact.html" class="nav-link">Aide</a>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="field">
-                        <label for="email">Email</label>
-                        <input type="text" name="email" id="email" />
-                    </div>
-                    <div class="field">
-                        <label for="message">Message</label>
-                        <textarea name="message" id="message" rows="3"></textarea>
-                    </div>
-                    <ul class="actions">
-                        <li><input type="submit" value="Send Message" /></li>
-                    </ul>
-                </form>
-            </section>
-            <section class="split contact">
-                <section class="alt">
-                    <h3>Address</h3>
-                    <p>1234 Somewhere Road #87257<br />
-                        Nashville, TN 00000-0000</p>
-                </section>
-                <section>
-                    <h3>Phone</h3>
-                    <p><a href="#">(000) 000-0000</a></p>
-                </section>
-                <section>
-                    <h3>Email</h3>
-                    <p><a href="#">info@untitled.tld</a></p>
-                </section>
-                <section>
-                    <h3>Social</h3>
-                    <ul class="icons alt">
-                        <li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
-                        <li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
-                        <li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
-                        <li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
-                    </ul>
-                </section>
-            </section>
-        </footer>
 
-        <!-- Copyright -->
-        <div id="copyright">
-            <ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+                </nav>
+
+            </div>
         </div>
-
     </div>
+
+    <div class="tm-home-img-container">
+        <img src="images/tm-large-home-resized.jpg" alt="Image" class="img-fluid">
+    </div>
+
+    <section class="tm-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-xs-center">
+                    <h2 class="tm-gold-text tm-title">Bonjour et bienvenue! </h2>
+                    <p class="tm-subtitle">Vous avez des difficultés à trouver un stage ? Ce site annexe de votre
+                        collège est là pour vous !</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>Exemples de stages des années précédentes :</h4>
+                </br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+
+                    <div class="tm-content-box">
+                        <img src="images/boulanger.jpg" alt="Image" class="tm-margin-b-20 img-fluid">
+                        <h4 class="tm-margin-b-20 tm-gold-text">Boulanger</h4>
+                        <p class="tm-margin-b-20">Rue du Bois des Saint-Pères (77240, Cesson)</p>
+                        <a href="#" class="tm-btn text-uppercase">Détails</a>
+                    </div>
+
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+
+                    <div class="tm-content-box">
+                        <img src="images/creperie.jpg" alt="Image" class="tm-margin-b-20 img-fluid">
+                        <h4 class="tm-margin-b-20 tm-gold-text">A la Crêperie de l’Avenue</h4>
+                        <p class="tm-margin-b-20">18 avenue du Général Patton (77000, Melun)</p>
+                        <a href="#" class="tm-btn text-uppercase">Détails</a>
+                    </div>
+
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+
+                    <div class="tm-content-box">
+                        <img src="images/GO.png" alt="Image" class="tm-margin-b-20 img-fluid">
+                        <h4 class="tm-margin-b-20 tm-gold-text">Général d’Optique </h4>
+                        <p class="tm-margin-b-20">Centre Commercial Boissénart (77240, Cesson)</p>
+                        <a href="#" class="tm-btn text-uppercase">Détails</a>
+                    </div>
+
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+
+                    <div class="tm-content-box">
+                        <img src="images/pain_g.jpg" alt="Image" class="tm-margin-b-20 img-fluid">
+                        <h4 class="tm-margin-b-20 tm-gold-text">Le Pain Gourmand</h4>
+                        <p class="tm-margin-b-20">47 avenue Georges Pompidou (77000, Melun)</p>
+                        <a href="#" class="tm-btn text-uppercase">Détails</a>
+                    </div>
+
+                </div>
+            </div> <!-- row -->
+
+            <div class="row tm-margin-t-big">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                    <div class="tm-2-col-left">
+
+                        <h3 class="tm-gold-text tm-title">Pellentesque fermentum mauris et posuere</h3>
+                        <p class="tm-margin-b-30">Vivamus accumsan blandit ligula. Sed lobortis efficitur sapien</p>
+                        <img src="images/tm-img-660x330-1.jpg" alt="Image" class="tm-margin-b-40 img-fluid">
+                        <p>
+                            Donec tempor lobortis tortor, in feugiat massa facilisis sed. Ut dignissim viverra pretium.
+                            In eu justo maximus turpis feugiat finibus scelerisque nec eros. Cras nec lectus tempor nibh
+                            vestibulum eleifend et ac elit.
+                        </p>
+                        <p>Morbi vel pharetra massa, non iaculis tortor. Nulla porttitor tincidunt felis et feugiat.
+                            Vivamus fermentum ligula justo, sit amet blandit nisl volutpat id. Fusce sagittis ultricies
+                            felis, non luctus mauris lacinia quis.</p>
+                        <p class="m-b-2"> Ut fringilla lacus ac tempor ullamcorper. Mauris iaculis placerat ex et
+                            mattis. Mauris id vulputate lectus, id fermentum sapien.
+                        </p>
+                        <a href="#" class="tm-btn text-uppercase">Read More</a>
+
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+
+                    <div class="tm-2-col-right">
+
+                        <div class="tm-2-rows-md-swap">
+                            <div class="tm-overflow-auto row tm-2-rows-md-down-2">
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                    <h3 class="tm-gold-text tm-title">
+                                        Categories
+                                    </h3>
+                                    <nav>
+                                        <ul class="nav">
+                                            <li><a href="#" class="tm-text-link">Tincidunt non faucibus placerat</a>
+                                            </li>
+                                            <li><a href="#" class="tm-text-link">Vestibulum tempor ac lectus</a></li>
+                                            <li><a href="#" class="tm-text-link">Fusce non turpis euismod</a></li>
+                                            <li><a href="#" class="tm-text-link">Nam in augue consectetur</a></li>
+                                            <li><a href="#" class="tm-text-link">Text Link Color #006699</a></li>
+                                        </ul>
+                                    </nav>
+                                </div> <!-- col -->
+
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 tm-xs-m-t">
+                                    <h3 class="tm-gold-text tm-title">
+                                        Useful Links
+                                    </h3>
+                                    <nav>
+                                        <ul class="nav">
+                                            <li><a href="#" class="tm-text-link">Suspendisse sed dui nulla</a></li>
+                                            <li><a href="#" class="tm-text-link">Lorem ipsum dolor sit</a></li>
+                                            <li><a href="#" class="tm-text-link">Duiss nec purus et eros</a></li>
+                                            <li><a href="#" class="tm-text-link">Etiam pulvinar et ligula sed</a></li>
+                                            <li><a href="#" class="tm-text-link">Proin egestas eu felis et iaculis</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div> <!-- col -->
+                            </div>
+
+                            <div class="row tm-2-rows-md-down-1 tm-margin-t-mid">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                    <h3 class="tm-gold-text tm-title tm-margin-b-30">Related Posts</h3>
+                                    <div class="media tm-related-post">
+                                        <div class="media-left media-middle">
+                                            <a href="#">
+                                                <img class="media-object" src="images/tm-img-240x120-1.jpg"
+                                                     alt="Generic placeholder image">
+                                            </a>
+                                        </div>
+                                        <div class="media-body">
+                                            <a href="#"><h4 class="media-heading tm-gold-text tm-margin-b-15">Lorem
+                                                    ipsum dolor</h4></a>
+                                            <p class="tm-small-font tm-media-description">Aenean cursus tellus mauris,
+                                                quis consequat mauris dapibus id. Donec scelerisque porttitor
+                                                pharetra.</p>
+                                        </div>
+                                    </div>
+                                    <div class="media tm-related-post">
+                                        <div class="media-left media-middle">
+                                            <a href="#">
+                                                <img class="media-object" src="images/tm-img-240x120-2.jpg"
+                                                     alt="Generic placeholder image">
+                                            </a>
+                                        </div>
+                                        <div class="media-body">
+                                            <a href="#"><h4 class="media-heading tm-gold-text tm-margin-b-15">Lorem
+                                                    ipsum dolor</h4></a>
+                                            <p class="tm-small-font tm-media-description">Aenean cursus tellus mauris,
+                                                quis consequat mauris dapibus id. Donec scelerisque porttitor
+                                                pharetra.</p>
+                                        </div>
+                                    </div>
+                                    <div class="media tm-related-post">
+                                        <div class="media-left media-middle">
+                                            <a href="#">
+                                                <img class="media-object" src="images/tm-img-240x120-3.jpg"
+                                                     alt="Generic placeholder image">
+                                            </a>
+                                        </div>
+                                        <div class="media-body">
+                                            <a href="#"><h4 class="media-heading tm-gold-text tm-margin-b-15">Lorem
+                                                    ipsum dolor</h4></a>
+                                            <p class="tm-small-font tm-media-description">Aenean cursus tellus mauris,
+                                                quis consequat mauris dapibus id. Donec scelerisque porttitor
+                                                pharetra.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div> <!-- row -->
+
+        </div>
+    </section>
+
+    <footer class="tm-footer">
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+
+                    <div class="tm-footer-content-box">
+                        <h3 class="tm-gold-text tm-title tm-footer-content-box-title">Proin eu posuere felis</h3>
+                        <div class="tm-gray-bg">
+                            <p>Classic is free HTML CSS website template provided by templatemo for everyone. Feel free
+                                to use it.</p>
+                            <p>Aenean cursus tellus mauris, quis consequat mauris dapibus id. Donec scelerisque
+                                porttitor pharetra.</p>
+                            <p><strong>Danny Egg (Executive)</strong></p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+                    <div class="tm-footer-content-box tm-footer-links-container">
+
+                        <h3 class="tm-gold-text tm-title tm-footer-content-box-title">Nulla tortor dolor</h3>
+                        <nav>
+                            <ul class="nav">
+                                <li><a href="#" class="tm-footer-link">Tincidunt non faucibus</a></li>
+                                <li><a href="#" class="tm-footer-link">Vestibulum tempor</a></li>
+                                <li><a href="#" class="tm-footer-link">Fusce non turpis euismod</a></li>
+                                <li><a href="#" class="tm-footer-link">Lorem ipsum dolor sit</a></li>
+                                <li><a href="#" class="tm-footer-link">Nam in augue consectetur</a></li>
+                                <li><a href="#" class="tm-footer-link">Text Link Color #CCCC66</a></li>
+                            </ul>
+                        </nav>
+
+                    </div>
+
+                </div>
+
+                <!-- Add the extra clearfix for only the required viewport
+                    http://stackoverflow.com/questions/24590222/bootstrap-3-grid-with-different-height-in-each-item-is-it-solvable-using-only
+                -->
+                <div class="clearfix hidden-lg-up"></div>
+
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+
+                    <div class="tm-footer-content-box">
+
+                        <h3 class="tm-gold-text tm-title tm-footer-content-box-title">Etiam mollis ornare</h3>
+                        <p class="tm-margin-b-30">Aenean cursus tellus mauris, quis consequat mauris dapibus id. Donec
+                            scelerisque porttitor pharetra.</p>
+                        <hr class="tm-margin-b-30">
+                        <p class="tm-margin-b-30">Aenean cursus tellus mauris, quis consequat mauris dapibus id. Donec
+                            scelerisque porttitor pharetra.</p>
+                        <hr class="tm-margin-b-30">
+                        <p class="tm-margin-b-30">Aenean cursus tellus mauris, quis consequat mauris dapibus id. Donec
+                            scelerisque porttitor pharetra.</p>
+                        <a href="#" class="tm-btn tm-btn-gray text-uppercase">Read More</a>
+
+                    </div>
+
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+
+                    <div class="tm-footer-content-box">
+
+                        <h3 class="tm-gold-text tm-title tm-footer-content-box-title">Fusce non turpis</h3>
+                        <div class="tm-margin-b-30">
+                            <img src="images/tm-img-100x100-1.jpg" alt="Image" class="tm-footer-thumbnail">
+                            <img src="images/tm-img-100x100-2.jpg" alt="Image" class="tm-footer-thumbnail">
+                            <img src="images/tm-img-100x100-3.jpg" alt="Image" class="tm-footer-thumbnail">
+                            <img src="images/tm-img-100x100-4.jpg" alt="Image" class="tm-footer-thumbnail">
+                            <img src="images/tm-img-100x100-5.jpg" alt="Image" class="tm-footer-thumbnail">
+                            <img src="images/tm-img-100x100-6.jpg" alt="Image" class="tm-footer-thumbnail">
+                        </div>
+                        <p class="tm-margin-b-20">Curabitur dui massa, aliquam quis mi sed, tempor vulputate tellus. Sed
+                            vestibulum non neque.</p>
+                        <a href="#" class="tm-btn tm-btn-gray text-uppercase">Browse</a>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 tm-copyright-col">
+                    <p class="tm-copyright-text">Copyright 2018 Collége les Capucins Melun</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 {% endblock %}
 
 
