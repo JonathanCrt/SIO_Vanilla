@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+
+
+{% block body %}
+
+    <div class="tm-header">
+        <div class="container-fluid">
+            <div class="tm-header-inner">
+                <a href="#" class="navbar-brand tm-site-name titleApp">Vanilla</a>
+
+                <!-- navbar -->
+                {{ include('menu.html.twig') }}
+
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <section>
+            <h3 class="major">Formulaire</h3>
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <br /><button>Envoyer</button>
+            {{ form_end(form) }}
+        </section>
+    </div>
+
+
+{% endblock %}
+
+
+
+
+
