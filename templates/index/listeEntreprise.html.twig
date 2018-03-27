@@ -11,9 +11,6 @@
         <div  class="tm-header-inner">
             <a href="#" class="navbar-brand tm-site-name titleApp">Vanilla</a>
 
-            <!-- navbar -->
-            {{ include('menu.html.twig') }}
-
         </div>
     </div>
 </div>
@@ -34,7 +31,7 @@
         </tr>
         </thead>
         <tbody>
-        {% for i in listeEntreprises %}
+        {% for i in listeEntreprise %}
             <tr>
                 <td>{{  i.nomEntreprise }}</td>
                 <td>{{  i.villeEntreprise}}</td>
