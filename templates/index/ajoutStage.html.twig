@@ -6,6 +6,9 @@
 
 {% block body %}
 
+
+
+    {{ form_start(form) }}
     <div class="tm-header">
         <div class="container-fluid">
             <div class="tm-header-inner">
@@ -20,8 +23,11 @@
     <div class="container">
         <section>
             <h3 class="major">Formulaire</h3>
-            {{ form_start(form) }}
-            {{ form_widget(form) }}
+            <div class="form-group">
+                {{ form_widget(form,
+                    {'attr': {'class': 'form-control'}}
+                )}}
+            </div>
             <br /><button>Envoyer</button>
             {{ form_end(form) }}
         </section>
