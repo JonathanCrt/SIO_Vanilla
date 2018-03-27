@@ -12,31 +12,7 @@
             <a href="#" class="navbar-brand tm-site-name titleApp">Vanilla</a>
 
             <!-- navbar -->
-            <nav class="navbar tm-main-nav">
-
-                <button class="navbar-toggler hidden-md-up" type="button" data-toggle="collapse"
-                        data-target="#tmNavbar">
-                    &#9776;
-                </button>
-
-                <div class="collapse navbar-toggleable-sm" id="tmNavbar">
-                    <ul class="nav navbar-nav">
-                        <li class="nav-item">
-                            <a href="/" class="nav-link">Accueil</a>
-                        </li>
-                        <li class="nav-item active">
-                            <a href="/listeEntreprise" class="nav-link">Liste des entreprises</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/ajoutEntreprise" class="nav-link">J'ai un stage!</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/aide" class="nav-link">Aide</a>
-                        </li>
-                    </ul>
-                </div>
-
-            </nav>
+            {{ include('menu.html.twig') }}
 
         </div>
     </div>
@@ -46,20 +22,19 @@
     <table class="table table-hover table-warning">
         <thead>
         <tr>
-            <th>nomEntreprise</th>
-            <th>villeEntreprise</th>
-            <th>cpEntreprise</th>
-            <th>adressseEntreprise</th>
-            <th>mailEntreprise</th>
-            <th>telEntreprise</th>
-            <th>activiteEntreprise</th>
-            <th>modification</th>
+            <th>Entreprise</th>
+            <th>Ville</th>
+            <th>Code Postal</th>
+            <th>Adresse</th>
+            <th>email</th>
+            <th>Téléphone</th>
+            <th>Activité</th>
 
 
         </tr>
         </thead>
         <tbody>
-        {% for i in listeEntreprise %}
+        {% for i in listeEntreprises %}
             <tr>
                 <td>{{  i.nomEntreprise }}</td>
                 <td>{{  i.villeEntreprise}}</td>
@@ -68,7 +43,6 @@
                 <td>{{  i.mailEntreprise }}</td>
                 <td>{{  i.telEntreprise }}</td>
                 <td>{{  i.activiteEntreprise }}</td>
-                <td><a href="{{ path('updateEntreprise', {'id': i.id}) }}"><span class="fas fa-edit"></span></a></td>
             </tr>
         {% endfor %}
         </tbody>
