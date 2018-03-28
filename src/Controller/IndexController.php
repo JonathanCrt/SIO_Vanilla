@@ -8,12 +8,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class IndexController extends Controller
 {
     /**
-     * @Route("/", name="index")
+     * @Route("/", name="authentification")
      */
     public function index()
     {
-        return $this->render('index/index.html.twig', [
-            'controller_name' => 'Vanilla',
+        return $this->render('index/authentification.html.twig', [
+            'controller_name' => 'AUTHENTIFICATION',
         ]);
     }
 

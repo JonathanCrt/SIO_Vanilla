@@ -114,4 +114,18 @@ class EntrepriseController extends Controller
     }
 
 
+
+    /**
+     * @Route("/listeEntrepriseProf", name="listeEntrepriseProf")
+     */
+    public function listeEntrepriseProf()
+    {
+        $listeEntrepriseProf = $this->getDoctrine()
+            ->getRepository(Entreprise::class)
+            ->findAll();
+        return $this->render('index/listeEntrepriseProf.html.twig', compact('listeEntrepriseProf'));
+
+
+    }
+
 }

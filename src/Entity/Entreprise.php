@@ -203,5 +203,9 @@ class Entreprise
     private $active;
 
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Tuteur", inversedBy="entreprise")
+     */
+    private $entreprise;
 
 }
