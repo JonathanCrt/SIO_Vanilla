@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {% endblock %}
+
+
+
+{% block body %}
+    <link rel="stylesheet" href="{{ asset('assets/css/ListCompany.css') }}">
+    <div class="tm-header">
+        <div class="container-fluid">
+            <div  class="tm-header-inner">
+                <a href="#" class="navbar-brand tm-site-name titleApp">Vanilla</a>
+            </div>
+        </div>
+    </div>
+    </br>
+
+    <div class="row">
+        <div class="container">
+            <a href="/listeEntreprise">
+                <button type="button" class="btn btn-primary btn-lg">ELEVE</button>
+            </a>
+
+            <a href="/listeEntrepriseProf">
+            <button type="button" class="btn btn-success btn-lg">PROFESSEUR</button>
+            </a>
+
+        </div>
+    </div>
+
+{% endblock %}
