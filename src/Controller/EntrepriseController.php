@@ -83,7 +83,7 @@ class EntrepriseController extends Controller
         $item->setActiviteEntreprise('');
         $item->setActive('');
         $form = $this->createFormBuilder($item)
-            ->add('NomEntreprise', TextType::class)
+            ->add('nomEntreprise', TextType::class)
             ->add('VilleEntreprise', TextType::class)
             ->add('CpEntreprise', TextType::class)
             ->add('AdressseEntreprise', TextType::class)

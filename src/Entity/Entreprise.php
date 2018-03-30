@@ -15,7 +15,42 @@ class Entreprise
      * @ORM\Column(type="integer")
      */
     private $idEntreprise;
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $nomEntreprise;
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $villeEntreprise;
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $cpEntreprise;
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $adressseEntreprise;
 
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $mailEntreprise;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $telEntreprise;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $activiteEntreprise;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $active;
     public function getId()
     {
         return $this->idEntreprise;
@@ -165,42 +200,7 @@ class Entreprise
         $this->active = $active;
     }
 
-    /**
-     * @ORM\Column(type="string")
-     */
-    private $nomEntreprise;
-    /**
-     * @ORM\Column(type="string")
-     */
-    private $villeEntreprise;
-    /**
-     * @ORM\Column(type="string")
-     */
-    private $cpEntreprise;
-    /**
-     * @ORM\Column(type="string")
-     */
-    private $adressseEntreprise;
 
-    /**
-     * @ORM\Column(type="string")
-     */
-    private $mailEntreprise;
-
-    /**
-     * @ORM\Column(type="string")
-     */
-    private $telEntreprise;
-
-    /**
-     * @ORM\Column(type="string")
-     */
-    private $activiteEntreprise;
-
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    private $active;
 
 
 
