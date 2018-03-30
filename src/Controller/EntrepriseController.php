@@ -15,14 +15,14 @@ class EntrepriseController extends Controller
 
 
     /**
-     * @Route("/listeEntreprise", name="listeEnterprise")
+     * @Route("/listeEntrepriseEleve", name="listeEntrepriseEleve")
      */
-    public function index()
+    public function listeEntrepriseEleve()
     {
         $listeEntreprise = $this->getDoctrine()
             ->getRepository(Entreprise::class)
             ->findAll();
-        return $this->render('index/listeEntreprise.html.twig', compact('listeEntreprise'));
+        return $this->render('eleve/listeEntreprise.html.twig', compact('listeEntreprise'));
 
 
     }
@@ -60,10 +60,10 @@ class EntrepriseController extends Controller
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($item);
                 $em->flush();
-                return $this->redirectToRoute('listeEnterprise');
+                return $this->redirectToRoute('listeEntrepriseProfesseur');
             }
         }
-        return $this->render('index/updateEntreprise.html.twig', array(
+        return $this->render('professeur/updateEntreprise.html.twig', array(
             'form' => $form->createView(),
         ));
     }
@@ -108,7 +108,7 @@ class EntrepriseController extends Controller
                 return $this->redirectToRoute('ajoutTuteur');
             }
         }
-        return $this->render('index/ajoutStage.html.twig', array(
+        return $this->render('eleve/ajoutStage.html.twig', array(
             'form' => $form->createView(),
         ));
     }
@@ -116,14 +116,14 @@ class EntrepriseController extends Controller
 
 
     /**
-     * @Route("/listeEntrepriseProf", name="listeEntrepriseProf")
+     * @Route("/listeEntrepriseProfesseur", name="listeEntrepriseProfesseur")
      */
     public function listeEntrepriseProf()
     {
-        $listeEntrepriseProf = $this->getDoctrine()
+        $listeEntreprise = $this->getDoctrine()
             ->getRepository(Entreprise::class)
             ->findAll();
-        return $this->render('index/listeEntrepriseProf.html.twig', compact('listeEntrepriseProf'));
+        return $this->render('professeur/listeEntreprise.html.twig', compact('listeEntreprise'));
 
 
     }

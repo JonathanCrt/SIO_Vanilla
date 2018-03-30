@@ -5,14 +5,14 @@
 
 
 {% block body %}
-
+    <link rel="stylesheet" href="{{ asset('assets/css/ListCompany.css') }}">
 
 
     {{ form_start(form) }}
     <div class="tm-header">
         <div class="container-fluid">
             <div class="tm-header-inner">
-                <a href="#" class="navbar-brand tm-site-name titleApp">Vanilla</a>
+                <a href="/indexEleve" class="navbar-brand tm-site-name titleApp">Vanilla</a>
 
                 <!-- navbar -->
                 <nav class="navbar tm-main-nav">
@@ -28,7 +28,7 @@
                                 <a href="/" class="nav-link">Accueil</a>
                             </li>
                             <li class="nav-item">
-                                <a href="/listeEntreprise" class="nav-link">Liste des entreprises</a>
+                                <a href="/listeEntrepriseEleve" class="nav-link">Liste des entreprises</a>
                             </li>
                             <li class="nav-item active">
                                 <a href="/ajoutEntreprise" class="nav-link">J'ai un stage!</a>
