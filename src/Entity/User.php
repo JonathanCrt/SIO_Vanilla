@@ -14,27 +14,21 @@ class User
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    private $idUser;
+    private $id;
 
     public function getId()
     {
-        return $this->idUser;
+        return $this->id;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getIdUser()
-    {
-        return $this->idUser;
-    }
+
 
     /**
      * @param mixed $idUser
      */
-    public function setIdUser($idUser): void
+    public function setId($id): void
     {
-        $this->idUser = $idUser;
+        $this->id = $id;
     }
 
     /**
@@ -198,5 +192,22 @@ class User
      */
     private $present;
 
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Stage", mappedBy="user")
+     */
+    private $stages;
+
+    public function __construct()
+    {
+        $this->stages = new ArrayCollection();
+    }
+    /**
+     * @return Collection|Stage[]
+     */
+    public function getStages()
+    {
+        return $this->stages;
+    }
 
 }

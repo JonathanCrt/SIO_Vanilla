@@ -14,33 +14,17 @@ class Stage
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    private $idStage;
+    private $id;
 
     public function getId()
     {
-        return $this->idStage;
+        return $this->id;
     }
 
     /**
      * @ORM\Column(type="date")
      */
     private $dateStage;
-
-    /**
-     * @return mixed
-     */
-    public function getIdStage()
-    {
-        return $this->idStage;
-    }
-
-    /**
-     * @param mixed $idStage
-     */
-    public function setIdStage($idStage): void
-    {
-        $this->idStage = $idStage;
-    }
 
     /**
      * @return mixed
@@ -59,4 +43,38 @@ class Stage
     }
 
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Tuteur", inversedBy="stages")
+     * @ORM\JoinColumn(referencedColumnName="id")
+     */
+    private $tuteur;
+
+    public function getTuteur(): Tuteur
+    {
+        return $this->tuteur;
+    }
+
+    public function setTuteur(Tuteur $tuteur)
+    {
+        $this->tuteur = $tuteur;
+    }
+
+
+
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="stages")
+     * @ORM\JoinColumn(referencedColumnName="id")
+     */
+    private $users;
+
+    public function getUser(): User
+    {
+        return $this->users;
+    }
+
+    public function setUser(User $users)
+    {
+        $this->users = $users;
+    }
 }

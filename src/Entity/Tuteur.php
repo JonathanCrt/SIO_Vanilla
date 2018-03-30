@@ -2,7 +2,9 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\Collection;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\TuteurRepository")
@@ -14,28 +16,32 @@ class Tuteur
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    private $idTuteur;
+    private $id;
 
+    /**
+     * @return mixed
+     */
     public function getId()
     {
         return $this->idTuteur;
     }
 
     /**
-     * @return mixed
+     * @ORM\Column(type="string")
      */
-    public function getIdTuteur()
-    {
-        return $this->idTuteur;
-    }
-
+    private $nomTuteur;
     /**
-     * @param mixed $idTuteur
+     * @ORM\Column(type="string")
      */
-    public function setIdTuteur($idTuteur): void
-    {
-        $this->idTuteur = $idTuteur;
-    }
+    private $prenomTuteur;
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $mailTuteur;
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $telTuteur;
 
     /**
      * @return mixed
@@ -100,25 +106,38 @@ class Tuteur
     {
         $this->telTuteur = $telTuteur;
     }
+
     /**
-     * @ORM\Column(type="string")
+     * @ORM\OneToMany(targetEntity="App\Entity\Stage", mappedBy="tuteur")
      */
-    private $nomTuteur;
+    private $stages;
+
+    public function __construct()
+    {
+        $this->stages = new ArrayCollection();
+    }
     /**
-     * @ORM\Column(type="string")
+     * @return Collection|Stage[]
      */
-    private $prenomTuteur;
+    public function getStages()
+    {
+        return $this->stages;
+    }
+
+
     /**
-     * @ORM\Column(type="string")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Entreprise", inversedBy="tuteurs")
+     * @ORM\JoinColumn(nullable=true)
      */
-    private $mailTuteur;
-    /**
-     * @ORM\Column(type="string")
-     */
-    private $telTuteur;
+    private $entreprises;
 
+    public function getEntreprises(): Entreprise
+    {
+        return $this->entreprises;
+    }
 
-
-
-
+    public function setEntreprise(Entreprise $entreprises)
+    {
+        $this->entreprises = $entreprises;
+    }
 }

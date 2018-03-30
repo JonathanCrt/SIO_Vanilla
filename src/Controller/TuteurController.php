@@ -45,7 +45,7 @@ class TuteurController extends Controller
                 return $this->redirectToRoute('AjoutStage');
             }
         }
-        return $this->render('index/ajoutStage.html.twig', array(
+        return $this->render('eleve/ajoutStage.html.twig', array(
             'form' => $form->createView(),
         ));
     }

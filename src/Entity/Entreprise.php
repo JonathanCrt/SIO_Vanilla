@@ -3,7 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Doctrine\Common\Collections\ArrayCollection;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\EntrepriseRepository")
  */
@@ -14,19 +14,33 @@ class Entreprise
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    private $idEntreprise;
+    private $id;
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+
+
     /**
      * @ORM\Column(type="string")
      */
     private $nomEntreprise;
+
     /**
      * @ORM\Column(type="string")
      */
     private $villeEntreprise;
+
     /**
      * @ORM\Column(type="string")
      */
     private $cpEntreprise;
+
     /**
      * @ORM\Column(type="string")
      */
@@ -51,26 +65,6 @@ class Entreprise
      * @ORM\Column(type="boolean")
      */
     private $active;
-    public function getId()
-    {
-        return $this->idEntreprise;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getIdEntreprise()
-    {
-        return $this->idEntreprise;
-    }
-
-    /**
-     * @param mixed $idEntreprise
-     */
-    public function setIdEntreprise($idEntreprise): void
-    {
-        $this->idEntreprise = $idEntreprise;
-    }
 
     /**
      * @return mixed
@@ -201,7 +195,22 @@ class Entreprise
     }
 
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Tuteur", mappedBy="entreprises")
+     */
+    private $tuteurs;
 
+    public function __construct()
+    {
+        $this->tuteurs = new ArrayCollection();
+    }
+    /**
+     * @return Collection|Tuteur[]
+     */
+    public function getTuteurs()
+    {
+        return $this->tuteurs;
+    }
 
 
 }
