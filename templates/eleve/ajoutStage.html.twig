@@ -6,13 +6,13 @@
 
 {% block body %}
     <link rel="stylesheet" href="{{ asset('assets/css/ListCompany.css') }}">
+    {% form_theme form 'bootstrap_4_layout.html.twig' %}
 
 
-    {{ form_start(form) }}
     <div class="tm-header">
         <div class="container-fluid">
             <div class="tm-header-inner">
-                <a href="/indexEleve" class="navbar-brand tm-site-name titleApp">Vanilla</a>
+                <a href="/" class="navbar-brand tm-site-name titleApp">Vanilla</a>
 
                 <!-- navbar -->
                 <nav class="navbar tm-main-nav">
@@ -25,7 +25,7 @@
                     <div class="collapse navbar-toggleable-sm" id="tmNavbar">
                         <ul class="nav navbar-nav">
                             <li class="nav-item ">
-                                <a href="/" class="nav-link">Accueil</a>
+                                <a href="/indexEleve" class="nav-link">Accueil</a>
                             </li>
                             <li class="nav-item">
                                 <a href="/listeEntrepriseEleve" class="nav-link">Liste des entreprises</a>
@@ -49,81 +49,20 @@
 
 
 
-            <h3 class="major">Formulaire d'ajout d'une entreprise d'accueil pour le stage : </h3>
+            <h3 class="major">Formulaire d'ajout  pour le stage : </h3>
             </br>
             <div class="row">
                 <div class="col-md-12">
                     <div class="col-md-6">
                         <div class="form-group col-md-12 col-sm-8" id="div_formNomPy">
 
-                            {{ form_widget(form.nomEntreprise,
-                                {'attr': {'class': 'form-control','placeholder': 'Nom'}}
-
-                            ) }}
-                            <small class="form-text text-danger  text-muted  smalltexterror ">Ce champ est erroné ou non renseigné</small>
-                            <small class="form-text text-success  text-muted smalltextvalid ">Ce champ est correct </small>
-                        </div>
-                        <div class="form-group col-md-12 col-sm-8" id="div_formVillePy">
-                            {{ form_widget(form.VilleEntreprise,
-                                {'attr': {'class': 'form-control','placeholder': 'Ville'}}
-                            ) }}
-                            <small class="form-text text-danger  text-muted  smalltexterror ">Ce champ est erroné ou non renseigné</small>
-                            <small class="form-text text-success  text-muted smalltextvalid ">Ce champ est correct </small>
-                        </div>
-                        <div class="form-group col-md-12 col-sm-8" id="div_formCpPy">
-                            {{ form_widget(form.CpEntreprise,
-                                {'attr': {'class': 'form-control','placeholder': 'Code postal'}}
-                            ) }}
-                            <small class="form-text text-danger  text-muted  smalltexterror ">Ce champ est erroné ou non renseigné</small>
-                            <small class="form-text text-success  text-muted smalltextvalid ">Ce champ est correct </small>
-                        </div>
-                        <div class="form-group col-md-12 col-sm-8" id="div_formAdressePy">
-                            {{ form_widget(form.AdressseEntreprise,
-                                {'attr': {'class': 'form-control','placeholder': 'Adresse'}}
-                            ) }}
-                            <small class="form-text text-danger  text-muted  smalltexterror ">Ce champ est erroné ou non renseigné</small>
-                            <small class="form-text text-success  text-muted smalltextvalid ">Ce champ est correct </small>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group col-md-12 col-sm-8" id="div_formTelPy">
-                            {{ form_widget(form.TelEntreprise,
-                                {'attr': {'class': 'form-control','placeholder': 'Téléphone'}}
-                            ) }}
-                            <small class="form-text text-danger  text-muted  smalltexterror ">Ce champ est erroné ou non renseigné</small>
-                            <small class="form-text text-success  text-muted smalltextvalid ">Ce champ est correct </small>
-                        </div>
-
-                        <div class="form-group col-md-12 col-sm-8" id="div_formMailPy">
-                            {{ form_widget(form.MailEntreprise,
-                                {'attr': {'class': 'form-control','placeholder': 'Mail'}}
-                            ) }}
-                            <small class="form-text text-danger  text-muted  smalltexterror ">Ce champ est erroné ou non renseigné</small>
-                            <small class="form-text text-success  text-muted smalltextvalid ">Ce champ est correct </small>
-                        </div>
-
-                        <div class="form-group col-md-12 col-sm-8" id="div_formActivitePy">
-                            {{ form_widget(form.ActiviteEntreprise,
-                                {'attr': {'class': 'form-control','placeholder': 'Activite'}}
-                            ) }}
-                            <small class="form-text text-danger  text-muted  smalltexterror ">Ce champ est erroné ou non renseigné</small>
-                            <small class="form-text text-success  text-muted smalltextvalid ">Ce champ est correct </small>
-                        </div>
-                        <div class="form-group col-md-12 col-sm-8" id="div_formActivePy">
-                            {{ form_widget(form.Active,
-                                {'attr': {'class': 'form-control','placeholder': 'Active'}}
-                            ) }}
-                            <small class="form-text text-danger  text-muted  smalltexterror ">Ce champ est erroné ou non renseigné</small>
-                            <small class="form-text text-success  text-muted smalltextvalid ">Ce champ est correct </small>
+                            {{ form_start(form) }}
+                            {{ form_widget(form) }}
+                            {{ form_end(form) }}
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="form-group col-md-offset-5 col-sm-8">
-                <br/>
-                <button class="btn btn-warning-outline fa fa-3x">Suivant <span class="fa fa-arrow-right"></span></button>
-            </div>
-            {{ form_end(form) }}
         </section>
     </div>
 

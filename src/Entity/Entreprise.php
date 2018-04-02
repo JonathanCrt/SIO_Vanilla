@@ -4,6 +4,9 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+use Symfony\Component\Validator\Constraints as Assert;
+
 /**
  * @ORM\Entity(repositoryClass="App\Repository\EntrepriseRepository")
  */
@@ -37,7 +40,13 @@ class Entreprise
     private $villeEntreprise;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="integer")
+     * @Assert\Length(
+     *      min = 3,
+     *      max = 5,
+     *      minMessage = "Votre Code postal doit contenir au moins 3 chiffre ex: '972'",
+     *      maxMessage = "Votre Code postal doit contenir au maximum 5 chiffre ex: '77000' "
+     * )
      */
     private $cpEntreprise;
 
@@ -48,11 +57,21 @@ class Entreprise
 
     /**
      * @ORM\Column(type="string")
+     * @Assert\Email(
+     *     message = "Votre adresse mail '{{ value }}' n'est pas un mail valide.",
+     *     checkMX = true
+     * )
      */
     private $mailEntreprise;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="integer")
+     * @Assert\Length(
+     *      min = 9,
+     *      max = 10,
+     *      minMessage = "Votre numéro de téléphone doit contenir 10 chiffre",
+     *      maxMessage = "Votre numéro de téléphone doit contenir 10 chiffre"
+     * )
      */
     private $telEntreprise;
 
@@ -60,11 +79,6 @@ class Entreprise
      * @ORM\Column(type="string")
      */
     private $activiteEntreprise;
-
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    private $active;
 
     /**
      * @return mixed
@@ -178,25 +192,15 @@ class Entreprise
         $this->activiteEntreprise = $activiteEntreprise;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getActive()
-    {
-        return $this->active;
-    }
 
-    /**
-     * @param mixed $active
-     */
-    public function setActive($active): void
-    {
-        $this->active = $active;
-    }
+
+
+
+
 
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Tuteur", mappedBy="entreprises")
+     * @ORM\OneToMany(targetEntity="App\Entity\Tuteur", mappedBy="entreprise")
      */
     private $tuteurs;
 
@@ -207,6 +211,7 @@ class Entreprise
     /**
      * @return Collection|Tuteur[]
      */
+
     public function getTuteurs()
     {
         return $this->tuteurs;

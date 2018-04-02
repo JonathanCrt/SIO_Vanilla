@@ -1,31 +1,29 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} {% endblock %}
 
 
 
 {% block body %}
     <link rel="stylesheet" href="{{ asset('assets/css/ListCompany.css') }}">
-    <div class="tm-header">
-        <div class="container-fluid">
-            <div  class="tm-header-inner">
-                <a href="#" class="navbar-brand tm-site-name titleApp">Vanilla</a>
+
+    <div class="container">
+
+
+
+        <!-- Jumbotron -->
+        <div class="jumbotron">
+            <h1 class="text-md-center">AUTHENTIFICATION</h1>
+            <p class="lead">Vous aller accéder aux site du collège  "Les Capucins" Veuillez choisir votre statut vous correspondant.</p>
+            <hr>
+            <div class="col-lg-12 col-md-12 text-md-center ">
+                <a href="/indexEleve"><button type="button" class="btn btn-primary btn-lg">ELEVE</button></a>
+                <a href="/indexProfesseur"><button type="button" class="btn btn-success btn-lg">PROFESSEUR</button></a>
             </div>
-        </div>
-    </div>
-    </br>
-
-    <div class="row">
-        <div class="container">
-            <a href="/indexEleve">
-                <button type="button" class="btn btn-primary btn-lg">ELEVE</button>
-            </a>
-
-            <a href="/indexProfesseur">
-            <button type="button" class="btn btn-success btn-lg">PROFESSEUR</button>
-            </a>
 
         </div>
-    </div>
+
+
+    </div> <!-- /container -->
+
 
 {% endblock %}

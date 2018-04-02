@@ -5,9 +5,9 @@
 
 
 {% block body %}
-    {% form_theme form 'bootstrap_4_layout.html.twig' %}
 
     <link rel="stylesheet" href="{{ asset('assets/css/ListCompany.css') }}">
+
     <div class="tm-header">
         <div class="container-fluid">
             <div class="tm-header-inner">
@@ -30,7 +30,7 @@
                                 <a href="{{ path('listeEntrepriseProfesseur') }}" class="nav-link">Liste des entreprises</a>
                             </li>
 
-                            <li class="nav-item">
+                            <li class="nav-item active">
                                 <a href="{{ path('listeUser') }}" class="nav-link">Liste des eleve</a>
                             </li>
                             <li class="nav-item">
@@ -42,20 +42,36 @@
                 </nav>
 
 
+
+            </div>
         </div>
     </div>
-</div>
-</br>
-<div class="container" style="color:goldenrod">
-    <div class="inner">
-        <section>
-            <h3 class="major">Formulaire</h3>
-            {{ form_start(form) }}
-            {{ form_widget(form) }}
-            <br /><button>Envoyer</button>
-            {{ form_end(form) }}
-        </section>
-    </div>
-</div>
+    </br>
+    <div class="container">
+        <table class="table table-hover table-warning">
+            <thead>
+            <tr>
+                <th>nom Eleve</th>
+                <th>Prenom Eleve</th>
+                <th>année scolaire</th>
+                <th>Classe</th>
+
+
+
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in listeUser %}
+                <tr>
+                    <td>{{  i.nomUser }}</td>
+                    <td>{{  i.prenomUser}}</td>
+                    <td>{{  i.anneeScolaire }}</td>
+                    <td>{{  i.classeUser }}</td>
+
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
     </div>
 {% endblock %}

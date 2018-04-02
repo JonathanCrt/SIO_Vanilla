@@ -5,7 +5,7 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\Collection;
-
+use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\TuteurRepository")
  */
@@ -19,14 +19,6 @@ class Tuteur
     private $id;
 
     /**
-     * @return mixed
-     */
-    public function getId()
-    {
-        return $this->idTuteur;
-    }
-
-    /**
      * @ORM\Column(type="string")
      */
     private $nomTuteur;
@@ -36,12 +28,42 @@ class Tuteur
     private $prenomTuteur;
     /**
      * @ORM\Column(type="string")
+     * @Assert\Email(
+     *     message = "Votre adresse mail '{{ value }}' n'est pas un mail valide.",
+     *     checkMX = true
+     * )
      */
+
     private $mailTuteur;
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="integer")
+     * @Assert\Length(
+     *      min = 9,
+     *      max = 10,
+     *      minMessage = "Votre numéro de téléphone doit contenir 10 chiffre",
+     *      maxMessage = "Votre numéro de téléphone doit contenir 10 chiffre"
+     * )
      */
     private $telTuteur;
+
+
+
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
 
     /**
      * @return mixed
@@ -91,21 +113,7 @@ class Tuteur
         $this->mailTuteur = $mailTuteur;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getTelTuteur()
-    {
-        return $this->telTuteur;
-    }
 
-    /**
-     * @param mixed $telTuteur
-     */
-    public function setTelTuteur($telTuteur): void
-    {
-        $this->telTuteur = $telTuteur;
-    }
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Stage", mappedBy="tuteur")
@@ -124,20 +132,38 @@ class Tuteur
         return $this->stages;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getTelTuteur()
+    {
+        return $this->telTuteur;
+    }
+
+    /**
+     * @param mixed $telTuteur
+     */
+    public function setTelTuteur($telTuteur): void
+    {
+        $this->telTuteur = $telTuteur;
+    }
+
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Entreprise", inversedBy="tuteurs")
-     * @ORM\JoinColumn(nullable=true)
+     * @ORM\JoinColumn(referencedColumnName="id")
      */
-    private $entreprises;
+    private $entreprise;
 
-    public function getEntreprises(): Entreprise
+    public function getEntreprise(): Entreprise
     {
-        return $this->entreprises;
+        return $this->entreprise;
     }
 
-    public function setEntreprise(Entreprise $entreprises)
+    public function setEntreprise(Entreprise $entreprise)
     {
-        $this->entreprises = $entreprises;
+        $this->entreprise = $entreprise;
     }
+
+
 }
