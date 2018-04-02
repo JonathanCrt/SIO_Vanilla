@@ -2,14 +2,29 @@
 
 namespace App\Controller;
 
+
 use App\Entity\Stage;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class StageController extends Controller
 {
+
+
+    /**
+     * @Route("/listeStagiaireByTuteur/{id}", name="listeStagiaireByTuteur")
+     */
+    public function listeStagiaireByEntreprise($id)
+    {
+        $listeStagiaireByTuteur = $this->getDoctrine()
+            ->getRepository(Stage::class)
+            ->findBy(array('tuteur' => $id));
+        return $this->render('professeur/listeStagiaireByTuteur.html.twig', compact('listeStagiaireByTuteur'));
+
+    }
 
 
     /**
@@ -21,6 +36,7 @@ class StageController extends Controller
         $item->setDateStage(new \DateTime('tomorrow'));
         $form = $this->createFormBuilder($item)
             ->add('DateStage', DateType::class)
+            ->add('Enregistrer', SubmitType::class)
             ->getForm();
 
         // Par défaut, le formulaire renvoie une demande POST au même contrôleur qui la restitue.
@@ -33,15 +49,16 @@ class StageController extends Controller
                     $em = $this->getDoctrine()->getManager();
                     $em->persist($item);
                     $em->flush();
-                    return $this->redirectToRoute('index');
+                    return $this->redirectToRoute('listeEntrepriseEleve');
                 }
-                return $this->redirectToRoute('index');
+                return $this->redirectToRoute('listeEntrepriseEleve');
             }
         }
-        return $this->render('index/ajoutStage.html.twig', array(
+        return $this->render('eleve/ajoutStage.html.twig', array(
             'form' => $form->createView(),
         ));
     }
+
 
 
 }

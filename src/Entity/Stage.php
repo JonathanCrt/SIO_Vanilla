@@ -3,7 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Doctrine\Common\Collections\ArrayCollection;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\StageRepository")
  */
@@ -66,15 +66,15 @@ class Stage
      * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="stages")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
-    private $users;
+    private $user;
 
     public function getUser(): User
     {
-        return $this->users;
+        return $this->user;
     }
 
-    public function setUser(User $users)
+    public function setUser(User $user)
     {
-        $this->users = $users;
+        $this->user = $user;
     }
 }

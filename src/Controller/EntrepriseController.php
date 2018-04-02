@@ -3,11 +3,12 @@
 namespace App\Controller;
 
 use App\Entity\Entreprise;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 
 class EntrepriseController extends Controller
@@ -49,7 +50,6 @@ class EntrepriseController extends Controller
                 ->add('MailEntreprise', TextType::class)
                 ->add('TelEntreprise', TextType::class)
                 ->add('ActiviteEntreprise', TextType::class)
-                ->add('Active', TextType::class)
                 ->getForm();
         }
         // Par défaut, demande POST au même contrôleur qui la restitue.
@@ -76,23 +76,22 @@ class EntrepriseController extends Controller
         $item = new Entreprise();
         $item->setNomEntreprise('');
         $item->setVilleEntreprise('');
-        $item->setCpEntreprise('');
+        $item->setCpEntreprise(null);
         $item->setAdressseEntreprise('');
         $item->setMailEntreprise('');
-        $item->setTelEntreprise('');
+        $item->setTelEntreprise(null);
         $item->setActiviteEntreprise('');
-        $item->setActive('');
         $form = $this->createFormBuilder($item)
             ->add('nomEntreprise', TextType::class,array(
                 'label'  => 'nom Entreprise',
             ))
             ->add('VilleEntreprise', TextType::class)
-            ->add('CpEntreprise', TextType::class)
+            ->add('CpEntreprise', IntegerType::class)
             ->add('AdressseEntreprise', TextType::class)
             ->add('MailEntreprise', TextType::class)
-            ->add('TelEntreprise', TextType::class)
+            ->add('TelEntreprise', IntegerType::class)
             ->add('ActiviteEntreprise', TextType::class)
-            ->add('Active', TextType::class)
+            ->add('Enregistrer', SubmitType::class)
             ->getForm();
 
         // Par défaut, le formulaire renvoie une demande POST au même contrôleur qui la restitue.

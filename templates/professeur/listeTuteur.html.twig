@@ -5,9 +5,9 @@
 
 
 {% block body %}
-    {% form_theme form 'bootstrap_4_layout.html.twig' %}
 
     <link rel="stylesheet" href="{{ asset('assets/css/ListCompany.css') }}">
+
     <div class="tm-header">
         <div class="container-fluid">
             <div class="tm-header-inner">
@@ -42,20 +42,41 @@
                 </nav>
 
 
+
+            </div>
         </div>
     </div>
-</div>
-</br>
-<div class="container" style="color:goldenrod">
-    <div class="inner">
-        <section>
-            <h3 class="major">Formulaire</h3>
-            {{ form_start(form) }}
-            {{ form_widget(form) }}
-            <br /><button>Envoyer</button>
-            {{ form_end(form) }}
-        </section>
-    </div>
-</div>
+    </br>
+    <div class="container">
+        <table class="table table-hover table-warning">
+            <thead>
+            <tr>
+                <th>nom Tuteur</th>
+                <th>prenom Tuteur</th>
+                <th>Code mailTuteur</th>
+                <th>telTuteur</th>
+                <th>Entreprise</th>
+                <th>Liste Stagiaire</th>
+
+
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in listeTuteurByEntreprise %}
+
+                <tr>
+                    <td>{{  i.nomTuteur }}</td>
+                    <td>{{  i.prenomTuteur }}</td>
+                    <td>{{  i.mailTuteur }}</td>
+                    <td>{{  i.telTuteur }}</td>
+                    <td>{{  i.entreprise.nomEntreprise }}</td>
+                    <td><a href="{{ path('listeStagiaireByTuteur', {'id': i.id}) }}"><span class="icon fa fa-users"></span></a></td>
+
+
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
     </div>
 {% endblock %}

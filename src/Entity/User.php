@@ -3,7 +3,9 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+use FOS\UserBundle\Model\User as BaseUser;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
@@ -16,15 +18,46 @@ class User
      */
     private $id;
 
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $nomUser;
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $prenomUser;
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $anneeScolaire;
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $login;
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $password;
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $role;
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $classeUser;
+
+
+    /**
+     * @return mixed
+     */
     public function getId()
     {
         return $this->id;
     }
 
-
-
     /**
-     * @param mixed $idUser
+     * @param mixed $id
      */
     public function setId($id): void
     {
@@ -143,54 +176,7 @@ class User
         $this->classeUser = $classeUser;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getPresent()
-    {
-        return $this->present;
-    }
 
-    /**
-     * @param mixed $present
-     */
-    public function setPresent($present): void
-    {
-        $this->present = $present;
-    }
-
-    /**
-     * @ORM\Column(type="string")
-     */
-    private $nomUser;
-    /**
-     * @ORM\Column(type="string")
-     */
-    private $prenomUser;
-    /**
-     * @ORM\Column(type="string")
-     */
-    private $anneeScolaire;
-    /**
-     * @ORM\Column(type="string")
-     */
-    private $login;
-    /**
-     * @ORM\Column(type="string")
-     */
-    private $password;
-    /**
-     * @ORM\Column(type="string")
-     */
-    private $role;
-    /**
-     * @ORM\Column(type="string")
-     */
-    private $classeUser;
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    private $present;
 
 
     /**
